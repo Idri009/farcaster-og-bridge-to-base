@@ -1,0 +1,23 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc = "0.8.26"
+evm_version = "cancun"
+
+remappings = [
+    "@layerzerolabs/onft-evm/=lib/devtools/packages/onft-evm/",
+    "@layerzerolabs/oapp-evm/=lib/devtools/packages/oapp-evm/",
+    "@layerzerolabs/lz-evm-protocol-v2/=lib/LayerZero-v2/packages/layerzero-v2/evm/protocol/",
+    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+    "solady/=lib/solady/src/"
+]
+
+[rpc_endpoints]
+zora = "${ZORA_RPC_URL}"
+base = "${BASE_RPC_URL}"
+
+[fmt]
+line_length = 120
+tab_width = 4
+bracket_spacing = true
