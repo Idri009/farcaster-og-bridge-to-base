@@ -11,7 +11,5 @@ contract FarcasterOGAdapter is ONFT721Adapter {
         address _token, // Farcaster OG NFT contract
         address _lzEndpoint, // LayerZero V2 endpoint
         address _delegate // Owner/admin address
-    )
-        ONFT721Adapter(_token, _lzEndpoint, _delegate)
-    { }
+    ) ONFT721Adapter(_token, _lzEndpoint, _delegate) {}
 }
