@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.26;
 
-import {Script} from "forge-std/Script.sol";
-import {console} from "forge-std/console.sol";
-import {FarcasterOGAdapter} from "../src/FarcasterOGAdapter.sol";
-import {FarcasterOGBase} from "../src/FarcasterOGBase.sol";
+import { Script } from "forge-std/Script.sol";
+import { console } from "forge-std/console.sol";
+import { FarcasterOGAdapter } from "../src/FarcasterOGAdapter.sol";
+import { FarcasterOGBase } from "../src/FarcasterOGBase.sol";
 
 contract ConfigurePeers is Script {
     uint32 constant ZORA_EID = 30195;
@@ -19,10 +19,7 @@ contract ConfigurePeers is Script {
         vm.createSelectFork(vm.envString("ZORA_RPC_URL"));
         vm.startBroadcast(deployerPrivateKey);
 
-        FarcasterOGAdapter(zoraAdapter).setPeer(
-            BASE_EID,
-            bytes32(uint256(uint160(baseOnft)))
-        );
+        FarcasterOGAdapter(zoraAdapter).setPeer(BASE_EID, bytes32(uint256(uint160(baseOnft))));
 
         vm.stopBroadcast();
 
@@ -30,10 +27,7 @@ contract ConfigurePeers is Script {
         vm.createSelectFork(vm.envString("BASE_RPC_URL"));
         vm.startBroadcast(deployerPrivateKey);
 
-        FarcasterOGBase(baseOnft).setPeer(
-            ZORA_EID,
-            bytes32(uint256(uint160(zoraAdapter)))
-        );
+        FarcasterOGBase(baseOnft).setPeer(ZORA_EID, bytes32(uint256(uint160(zoraAdapter))));
 
         vm.stopBroadcast();
 

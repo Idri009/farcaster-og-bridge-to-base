@@ -20,3 +20,8 @@ Thumbs.db
 
 # Dependencies
 node_modules/
+lib/devtools/
+lib/forge-std/
+lib/LayerZero-v2/
+lib/openzeppelin-contracts/
+lib/solady/
